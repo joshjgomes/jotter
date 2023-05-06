@@ -6,4 +6,4 @@ A highly customizable and acessible code-note taking webapp
 # Deployed on Vercel
 
 # Created by
-@jOshjGomes
+@jOshjGomesnpm
