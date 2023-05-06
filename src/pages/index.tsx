@@ -50,17 +50,6 @@ export const Content: React.FC = () => {
     onSuccess: (data) => setSelectedTopic(selectedTopic ?? data[0] ?? null),
   });
 
-  const deleteTopic = api.topic.delete.useMutation({
-    onSuccess: () => {
-      void utils.topic.getAll.invalidate();
-      void utils.note.getAll.invalidate();
-      setSelectedTopic(null);
-      setAlert({
-        type: "SUCCESS",
-        message: "Topic deleted",
-      });
-    },
-  });
 
   const {
     data: notes,
@@ -168,7 +157,7 @@ export const Content: React.FC = () => {
                     <li>
                       <button
                         onClick={() => {
-                          deleteTopic.mutate({
+                       ({
                             id: selectedTopic.id,
                           });
                         }}
